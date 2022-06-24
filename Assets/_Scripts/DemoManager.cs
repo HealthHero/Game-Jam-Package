@@ -23,12 +23,12 @@ public class DemoManager : MonoBehaviour
         {
             item.interactable = true;
         }
-        statusT.SetText("Wallet Connected, try the buttons below to get user NFTs");
+        statusT.SetText($"Wallet Connected, try the buttons below to get user NFTs, User address: {userAddress}");
     }
     public void OnWNFTsReceived(string json)
     {
         var cards = JsonConvert.DeserializeObject<List<WNFT>>(json);
-        statusT.SetText($"User W-NFTs received, check the User NFTs data object in data folder. User has ({cards.Count}) W-NFts");
+        statusT.SetText($"User W-NFTs received, check the User NFTs data object in data folder. User has ({cards.Count}) W-NFTs");
     }
     public void OnGoBotsReceived(string json)
     {
